@@ -1,10 +1,9 @@
-﻿import React, { PureComponent, Component } from "react";
+import React, { PureComponent, Component } from "react";
 import { RoomWhiteboard } from "white-react-sdk";
 import { WhiteWebSdk } from "white-web-sdk";
 import * as serviceWorker from "./serviceWorker";
 import { Row, Col, Button, Icon, Modal, Tooltip, Drawer, Input, Select, message } from "antd";
 import router from 'umi/router';
-import "white-web-sdk/style/index.css";
 import Courseware from "./Courseware";
 import WhiteList from "./WhiteList";
 import Camera from "./Camera";
@@ -41,7 +40,7 @@ class Chatroom extends PureComponent {
                     payload: oldRoom.user_ids,
                 });
             } else {
-                const url = 'https://cloudcapiv4.herewhite.com/room?token=' + oldRoom.miniToken;
+                const url = 'https://cloudcapiv4.herewhite.com/room?token=NETLESSSDK_YWs9bHBjMThLblNyWlJRN2FhZlJtcGRTRWhBYTNyd08weU9NaTk2Jm5vbmNlPTE2MDc2OTQ2OTUwMjkwMCZyb2xlPTAmc2lnPWY4ZTE1OGQzYWRiNTZkYjFmZDBmMzQ5MmE2NjBkNTU0ZTFmZjg4MGE2MDZlM2U0NzUyN2ZlYjhkMDc5YWYzN2M';
                 const requestInit = {
                     method: 'POST',
                     headers: {
@@ -77,6 +76,7 @@ class Chatroom extends PureComponent {
         }
 
         const whiteWebSdk = new WhiteWebSdk({
+            appIdentifier: '215/oZbDTJoYlSsk8A',
             zoomMaxScale: 1,
             zoomMinScale: 1,
         });
